@@ -1,0 +1,292 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    box-sizing: border-box;
+	
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+   
+    
+}
+
+
+
+.inline-block {
+    display: inline-block;
+    vertical-align: top;
+    
+
+}
+
+
+#Layer_1 {
+    width: 300px;
+    margin-left: 0px;
+    
+}
+.navigation {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #144260;
+    
+}
+
+
+
+nav {
+    display: flex;
+    list-style: none;
+   
+}
+
+
+nav ul li {
+    
+    padding: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: #fff;
+    
+}
+
+
+
+
+
+
+section.hero {
+    position: relative;
+    width: 100%;
+    /*overflow: hidden;*/
+    height: 100vh;
+    padding: 25px;
+    margin-bottom: 3rem;
+    min-height: 1050px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #144260;
+    
+}
+
+ h1.brandStatement {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    line-height: 5rem;
+    color: #fff;
+    width: 900px; 
+    margin-top: 200px;
+    margin-left: -60px;
+    
+}
+
+.content {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 70px;
+    margin-bottom: 70px;
+    padding-bottom: 2rem;
+}
+
+
+.content {
+    margin-bottom: 1rem;
+    
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  
+  
+  .card {
+    position: relative;
+    margin: 30px auto;
+    width: 300px;
+    height: 400px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    overflow: hidden;
+  }
+  
+  h2.skills-header {
+    
+   text-align: center;
+   font-family: "Montserrat", sans-serif;
+   font-weight: bold;
+   font-size: 50px;
+  }
+  
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    z-index: 1;
+   
+  }
+  
+  .card .card_image img {
+    width: inherit;
+    height: inherit;
+   
+    object-fit: cover;
+  }
+  
+  .card .card_title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -150px;
+    height: 40px;
+    color: black;
+    
+  }
+  
+  
+  
+  .bubbles {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+        
+    .bubble {
+      border-radius: 100%;
+      transform: translateY(800px) scale(0);
+      opacity: 0.8;
+      animation-name: bubbles;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      
+      &:before {
+         content: '';
+          position: absolute;
+          top: 10%;
+          left: 5%;
+          width: 90%;
+          height: 50%;
+          border-radius: 100%;
+          filter: blur(5px);
+          background: radial-gradient(60deg,
+        red,  #EA47AC 22%, #E5C028 63%);
+      }
+    } 
+  }
+    
+  
+  @for $i from 1 through (400) {
+    $size: random(130) + px;
+    .bubble:nth-of-type(#{$i}) {
+      width: $size;
+      height: $size;
+      top: random(100) + vh;
+      left: random(100) + vw;
+      animation-delay: $i * (.5s/ 15);
+      animation-duration: (random(35) + 2) + s;
+    }
+  }
+  
+  
+  
+  
+  
+  .card:hover {
+    transform: scale(1.2, 1.2);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+  }
+  
+  
+  
+  .title-black {
+    color: #fff;
+  }
+  
+  p {
+    color: #fff;
+  }
+  
+  
+  
+  
+
+
+svg.footerLogo {
+    height: 100px;
+    margin-left: -650px;
+    margin-bottom: 70px;
+}
+
+
+
+  footer {
+    background-color: #373738;
+    padding: 800px;
+    
+   
+}
+
+
+
+footer>ul>li {
+    display: block;
+    color: white;
+    padding: 18px;
+    font-size: 30px;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+}
+
+.footerItems {
+    display: flex;
+}
+
+.contact {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    color: bisque;
+    white-space: nowrap;
+}
+
+ /* MEDIA QUERIES */
+
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 1400px) {
+  h1.brandstatement {
+     font-size: 34px;
+  }
+}
+
+@keyframes bubbles {
+  100% {
+      transform: translateY(-900px) scale(1) rotate(360deg);
+    }
+  }
+ 
+
+ 
+
